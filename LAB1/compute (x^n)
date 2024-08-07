@@ -1,3 +1,5 @@
+//Iterative
+
 #include<iostream>
 using namespace std;
 int main(){
@@ -11,4 +13,22 @@ int main(){
         }
         cout << ans;
     }
+}
+
+//Recursive
+
+#include<iostream>
+using namespace std;
+
+int pow(int x, int n){
+    if(x==0) return 0;
+    if(n==1) return x;
+    return x * pow(x,n-1);
+}
+
+int main(){
+    int x = 2;
+    int n = 3;
+    int ans = pow(x,n);
+    cout << ans;
 }
