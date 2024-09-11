@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+bool tsum(int arr[], int n, int t) {
+    if (t == 0) return true;
+    if (n <= 0) return false;
+    if (tsum(arr, n - 1, t)) return true;
+    if (t >= arr[n - 1] && tsum(arr, n - 1, t - arr[n - 1])) return true;
+    return false;
+}
+
+int main() {
+    int arr[] = {2, 3, 7, 4, 6, 1};
+    int t = 11;
+    int n = izeof(arr) / sizeof(arr[0]);
+    cout << (tsum(arr, n, t) ? "True" : "False") << endl;
+    return 0;
+}
