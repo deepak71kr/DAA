@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// x^n
+int power(int x, int n){
+    if(n==0) return 1;
+    if(n==1) return x;
+    int h_power = power(x, n/2);
+    if(n%2==0)
+        return h_power*h_power;
+    if(n%2!=0)
+        return x * power(x, n-1);
+}
+
+int main(){
+    int x = 2;
+    int n = 4;
+    //ans = 81
+
+    cout << power(x,n);
+return 0;
+}
+
